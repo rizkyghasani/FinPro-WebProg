@@ -1,0 +1,80 @@
+<?php
+
+return [
+    // Umum
+    'Dashboard' => 'Dashboard',
+    'Profile' => 'Profil',
+    'Log Out' => 'Keluar',
+    'Manajemen Data' => 'Manajemen Data',
+    'Batal' => 'Batal',
+    'Simpan' => 'Simpan',
+    'Edit' => 'Edit',
+    'Hapus' => 'Hapus',
+    'Aksi' => 'Aksi',
+    'Terdapat Kesalahan Input!' => 'Terdapat Kesalahan Input!',
+    'Pilih Tipe' => 'Pilih Tipe',
+    'Unauthorized action.' => 'Aksi tidak diizinkan. Anda tidak memiliki akses ke data ini.',
+    'Perbarui' => 'Perbarui',
+
+    // Fitur
+    'Kategori' => 'Kategori',
+    'Transaksi' => 'Transaksi',
+    'Anggaran' => 'Anggaran',
+    'Tujuan Keuangan' => 'Tujuan Keuangan',
+
+    // Kategori
+    'Manajemen Kategori' => 'Manajemen Kategori',
+    'Daftar Kategori Keuangan' => 'Daftar Kategori Keuangan',
+    'Tambah Kategori' => 'Tambah Kategori',
+    'Nama Kategori' => 'Nama Kategori',
+    'Tipe' => 'Tipe',
+    'Pemasukan' => 'Pemasukan',
+    'Pengeluaran' => 'Pengeluaran',
+    'Ikon (Opsional)' => 'Ikon (Opsional)',
+    'Berhasil membuat Kategori baru!' => 'Berhasil membuat Kategori baru!',
+    'Kategori berhasil diperbarui.' => 'Kategori berhasil diperbarui.',
+    'Kategori berhasil dihapus.' => 'Kategori berhasil dihapus.',
+
+    // Transaksi
+    'Daftar Transaksi' => 'Daftar Transaksi',
+    'Tambah Transaksi' => 'Tambah Transaksi',
+    'Tipe Transaksi' => 'Tipe Transaksi',
+    'Tanggal' => 'Tanggal',
+    'Deskripsi/Catatan' => 'Deskripsi/Catatan',
+    'Jumlah' => 'Jumlah',
+    'Simpan Transaksi' => 'Simpan Transaksi',
+    'Transaksi baru berhasil ditambahkan!' => 'Transaksi baru berhasil ditambahkan!',
+    'Transaksi berhasil diperbarui!' => 'Transaksi berhasil diperbarui!',
+    'Kurang:' => 'Kurang:',
+    'Telah Terkumpul:' => 'Telah Terkumpul:',
+    'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.',
+    'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.' => 'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.',
+
+    // Anggaran
+    'Manajemen Anggaran' => 'Manajemen Anggaran',
+    'Buat Anggaran Baru' => 'Buat Anggaran Baru',
+    'Batas Anggaran' => 'Batas Anggaran',
+    'Periode Mulai' => 'Periode Mulai',
+    'Periode Berakhir' => 'Periode Berakhir',
+    'Anggaran baru berhasil ditambahkan!' => 'Anggaran baru berhasil ditambahkan!',
+    'Total Batas Anggaran' => 'Total Batas Anggaran',
+    'Total Digunakan' => 'Total Digunakan',
+    'Sisa Anggaran' => 'Sisa Anggaran',
+    'Digunakan:' => 'Digunakan:',
+    'Batas:' => 'Batas:',
+    'Anggaran berhasil diperbarui.' => 'Anggaran berhasil diperbarui.',
+
+    // Tujuan
+    'Manajemen Tujuan' => 'Manajemen Tujuan',
+    'Buat Tujuan Baru' => 'Buat Tujuan Baru',
+    'Nama Tujuan' => 'Nama Tujuan',
+    'Target Jumlah' => 'Target Jumlah',
+    'Jumlah Saat Ini' => 'Jumlah Saat Ini',
+    'Batas Waktu Target (Opsional)' => 'Batas Waktu Target (Opsional)',
+    'Simpan Tujuan' => 'Simpan Tujuan',
+    'Tujuan berhasil dibuat!' => 'Tujuan berhasil dibuat!',
+    'Kurang:' => 'Kurang:',
+    'Telah Terkumpul:' => 'Telah Terkumpul:',
+    'Target Akhir:' => 'Target Akhir:',
+    'Batas Waktu:' => 'Batas Waktu:',
+];

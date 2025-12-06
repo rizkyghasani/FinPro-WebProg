@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class CategoryRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return auth()->check();
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            // Kriteria 4: Validasi wajib
+            'name' => 'required|string|max:50',
+            'type' => 'required|in:income,expense', 
+            'icon' => 'nullable|string|max:50',
+        ];
+    }
+
+    public function messages(): array
+    {
+        // Kriteria 6: Lokalisasi pesan (Opsional: Kita akan gunakan file validation.php yang sudah diterjemahkan)
+        // Kita bisa override di sini, tapi lebih baik gunakan fitur lokalisasi Laravel
+        return [
+            // Contoh override:
+            'name.required' => 'Nama kategori wajib diisi.', 
+        ];
+    }
+}

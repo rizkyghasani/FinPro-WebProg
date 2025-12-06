@@ -1,0 +1,33 @@
+
+// Impor seluruh framework Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+body.auth-background {
+    background-image: url(/Applications/XAMPP/xamppfiles/htdocs/my-laravel-bootstrap/resources/rm222-mind-16.jpg); // Pastikan path foto benar
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.auth-background .card {
+    background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan agar background terlihat */
+    border-radius: 0.5rem;
+}
+
+.transaction-list-container {
+    max-height: 500px; /* Tentukan tinggi maksimum tabel sebelum scroll muncul */
+    overflow-y: auto;  /* Mengaktifkan scroll vertikal */
+    padding-right: 15px; /* Memberi ruang agar scrollbar tidak menempel ke tepi */
+}
+
+.transaction-list-container table {
+    margin-bottom: 0; /* Menghapus margin bawah tabel agar tidak ada ruang kosong di dalam kontainer */
+}
