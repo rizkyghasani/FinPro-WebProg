@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', __('Edit Anggaran'))
+@section('title', __('app.Edit Anggaran'))
 
 @section('content')
 <div class="row">
     <div class="col-md-8 mx-auto">
         <div class="card shadow-sm">
             <div class="card-header bg-white border-0 py-3">
-                <h4 class="mb-0">{{ __('Edit Anggaran') }}</h4>
+                <h4 class="mb-0">{{ __('app.Edit Anggaran') }}</h4>
                 <p class="text-muted mb-0">{{ __('Mengubah batas dan periode anggaran untuk') }} {{ $budget->category->name }}</p>
             </div>
             <div class="card-body">
@@ -16,7 +16,7 @@
                     @method('PUT')
                     
                     <div class="mb-3">
-                        <label for="limit" class="form-label">{{ __('Batas Anggaran') }} (Rp) <span class="text-danger">*</span></label>
+                        <label for="limit" class="form-label">{{ __('app.Batas Anggaran') }} (Rp) <span class="text-danger">*</span></label>
                         <input 
                             type="number" 
                             class="form-control @error('limit') is-invalid @enderror" 
@@ -35,9 +35,9 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="category_id" class="form-label">{{ __('Kategori') }} <span class="text-danger">*</span></label>
+                        <label for="category_id" class="form-label">{{ __('app.Kategori') }} <span class="text-danger">*</span></label>
                         <select class="form-select" id="category_id" name="category_id" disabled>
-                            <option value="{{ $budget->category_id }}" selected>{{ $budget->category->name }} ({{ __('Pengeluaran') }})</option>
+                            <option value="{{ $budget->category_id }}" selected>{{ $budget->category->name }} ({{ __('app.Pengeluaran') }})</option>
                         </select>
                         <input type="hidden" name="category_id" value="{{ $budget->category_id }}">
                         <div class="form-text text-danger">{{ __('Kategori tidak dapat diubah setelah anggaran dibuat.') }}</div>
@@ -46,7 +46,7 @@
                     <div class="row mb-3">
                         {{-- Tanggal Mulai --}}
                         <div class="col-md-6">
-                            <label for="start_date" class="form-label">{{ __('Periode Mulai') }} <span class="text-danger">*</span></label>
+                            <label for="start_date" class="form-label">{{ __('app.Periode Mulai') }} <span class="text-danger">*</span></label>
                             <input 
                                 type="date" 
                                 class="form-control @error('start_date') is-invalid @enderror" 
@@ -62,7 +62,7 @@
 
                         {{-- Tanggal Berakhir --}}
                         <div class="col-md-6">
-                            <label for="end_date" class="form-label">{{ __('Periode Berakhir') }} <span class="text-danger">*</span></label>
+                            <label for="end_date" class="form-label">{{ __('app.Periode Berakhir') }} <span class="text-danger">*</span></label>
                             <input 
                                 type="date" 
                                 class="form-control @error('end_date') is-invalid @enderror" 
@@ -78,9 +78,9 @@
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                        <a href="{{ route('budgets.index') }}" class="btn btn-outline-secondary me-2">{{ __('Batal') }}</a>
+                        <a href="{{ route('budgets.index') }}" class="btn btn-outline-secondary me-2">{{ __('app.Batal') }}</a>
                         <button type="submit" class="btn btn-success">
-                            <i class="bi bi-arrow-repeat me-1"></i> {{ __('Perbarui Anggaran') }}
+                            <i class="bi bi-arrow-repeat me-1"></i> {{ __('app.Perbarui Anggaran') }}
                         </button>
                     </div>
                 </form>

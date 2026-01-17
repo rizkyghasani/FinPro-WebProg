@@ -109,26 +109,26 @@
                         </li>
                         
                         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                            <span>{{ __('Manajemen Data') }}</span>
+                            <span>{{ __('app.Manajemen Data') }}</span>
                         </h6>
                         <li class="nav-item">
                             <a class="nav-link @if(request()->routeIs('transactions.*')) active @endif" href="{{ route('transactions.index') }}">
-                                <i class="bi bi-cash-stack me-2"></i> {{ __('Transaksi') }}
+                                <i class="bi bi-cash-stack me-2"></i> {{ __('app.Transaksi') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(request()->routeIs('budgets.*')) active @endif" href="{{ route('budgets.index') }}">
-                                <i class="bi bi-pie-chart-fill me-2"></i> {{ __('Anggaran') }}
+                                <i class="bi bi-pie-chart-fill me-2"></i> {{ __('app.Anggaran') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(request()->routeIs('categories.*')) active @endif" href="{{ route('categories.index') }}">
-                                <i class="bi bi-tags-fill me-2"></i> {{ __('Kategori') }}
+                                <i class="bi bi-tags-fill me-2"></i> {{ __('app.Kategori') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(request()->routeIs('goals.*')) active @endif" href="{{ route('goals.index') }}">
-                                <i class="bi bi-bullseye me-2"></i> {{ __('Tujuan Keuangan') }}
+                                <i class="bi bi-bullseye me-2"></i> {{ __('app.Tujuan Keuangan') }}
                             </a>
                         </li>
 

@@ -63,6 +63,7 @@ return [
     'Belum ada kategori yang ditambahkan.' => 'Belum ada kategori yang ditambahkan.',
 
     // Transaksi
+    'Tambah Transaksi Baru' => 'Tambah Transaksi Baru',
     'Daftar Transaksi' => 'Daftar Transaksi',
     'Tambah Transaksi' => 'Tambah Transaksi',
     'Tipe Transaksi' => 'Tipe Transaksi',
@@ -73,6 +74,7 @@ return [
     'Transaksi baru berhasil ditambahkan!' => 'Transaksi baru berhasil ditambahkan!',
     'Transaksi berhasil diperbarui!' => 'Transaksi berhasil diperbarui!',
     'Kurang:' => 'Kurang:',
+    'Pilih Kategori' => 'Pilih Kategori',
     'Telah Terkumpul:' => 'Telah Terkumpul:',
     'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.',
     'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.' => 'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.',
@@ -83,6 +85,8 @@ return [
     'sebesar' => 'sebesar',
     'Konfirmasi Hapus' => 'Konfirmasi Hapus',
     'Hapus Permanen' => 'Hapus Permanen',
+    'Edit Transaksi' => 'Edit Transaksi',
+    'Perbarui Transaksi' => 'Perbarui Transaksi',
 
     // Anggaran
     'Manajemen Anggaran' => 'Manajemen Anggaran',
@@ -113,6 +117,7 @@ return [
     'Anda belum menetapkan anggaran成份.' => 'Anda belum menetapkan anggaran成份.',
     'Anggaran Pengeluaran' => 'Anggaran Pengeluaran',
     'Anggaran Aktif Periode:' => 'Anggaran Aktif Periode:',
+    'Perbarui Anggaran' => 'Perbarui Anggaran',
 
     // Tujuan
     'Manajemen Tujuan' => 'Manajemen Tujuan',

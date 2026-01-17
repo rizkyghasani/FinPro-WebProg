@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', __('Tambah Transaksi'))
+@section('title', __('app.Tambah Transaksi'))
 
 @section('content')
 <div class="row">
     <div class="col-md-8 mx-auto">
         <div class="card shadow-sm">
             <div class="card-header bg-white border-0 py-3">
-                <h4 class="mb-0">{{ __('Tambah Transaksi Baru') }}</h4>
+                <h4 class="mb-0">{{ __('app.Tambah Transaksi Baru') }}</h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('transactions.store') }}" method="POST">
@@ -15,11 +15,11 @@
                     
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="type" class="form-label">{{ __('Tipe Transaksi') }} <span class="text-danger">*</span></label>
+                            <label for="type" class="form-label">{{ __('app.Tipe Transaksi') }} <span class="text-danger">*</span></label>
                             <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" required>
                                 <option value="" disabled selected>{{ __('Pilih Tipe') }}</option>
-                                <option value="income" {{ old('type') == 'income' ? 'selected' : '' }}>{{ __('Pemasukan') }}</option>
-                                <option value="expense" {{ old('type') == 'expense' ? 'selected' : '' }}>{{ __('Pengeluaran') }}</option>
+                                <option value="income" {{ old('type') == 'income' ? 'selected' : '' }}>{{ __('app.Pemasukan') }}</option>
+                                <option value="expense" {{ old('type') == 'expense' ? 'selected' : '' }}>{{ __('app.Pengeluaran') }}</option>
                             </select>
                             @error('type')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="date" class="form-label">{{ __('Tanggal') }} <span class="text-danger">*</span></label>
+                            <label for="date" class="form-label">{{ __('app.Tanggal') }} <span class="text-danger">*</span></label>
                             <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="{{ old('date', date('Y-m-d')) }}" required max="{{ date('Y-m-d') }}">
                             @error('date')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -36,7 +36,7 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="description" class="form-label">{{ __('Deskripsi/Catatan') }} <span class="text-danger">*</span></label>
+                        <label for="description" class="form-label">{{ __('app.Deskripsi/Catatan') }} <span class="text-danger">*</span></label>
                         <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" placeholder="Misal: Gaji bulan ini" required>{{ old('description') }}</textarea>
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -45,9 +45,9 @@
                     
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="category_id" class="form-label">{{ __('Kategori') }} <span class="text-danger">*</span></label>
+                            <label for="category_id" class="form-label">{{ __('app.Kategori') }} <span class="text-danger">*</span></label>
                             <select class="form-select @error('category_id') is-invalid @enderror" id="category_id" name="category_id" required>
-                                <option value="" disabled selected>{{ __('Pilih Kategori') }}</option>
+                                <option value="" disabled selected>{{ __('app.Pilih Kategori') }}</option>
                                 @foreach ($categories as $category)
                                     <option 
                                         value="{{ $category->id }}" 
@@ -64,7 +64,7 @@
                         </div>
                         
                         <div class="col-md-6">
-                            <label for="amount" class="form-label">{{ __('Jumlah') }} (Rp) <span class="text-danger">*</span></label>
+                            <label for="amount" class="form-label">{{ __('app.Jumlah') }} (Rp) <span class="text-danger">*</span></label>
                             <input type="number" class="form-control @error('amount') is-invalid @enderror" id="amount" name="amount" value="{{ old('amount') }}" step="0.01" min="1" placeholder="Misal: 50000.50" required>
                             @error('amount')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -74,9 +74,9 @@
                     
 
                     <div class="d-flex justify-content-end">
-                        <a href="{{ route('transactions.index') }}" class="btn btn-outline-secondary me-2">{{ __('Batal') }}</a>
+                        <a href="{{ route('transactions.index') }}" class="btn btn-outline-secondary me-2">{{ __('app.Batal') }}</a>
                         <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-save me-1"></i> {{ __('Simpan Transaksi') }}
+                            <i class="bi bi-save me-1"></i> {{ __('app.Simpan Transaksi') }}
                         </button>
                     </div>
                 </form>

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', __('Manajemen Kategori'))
+@section('title', __('app.Manajemen Kategori'))
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="h3">{{ __('Daftar Kategori Keuangan') }}</h2>
+    <h2 class="h3">{{ __('app.Daftar Kategori Keuangan') }}</h2>
     <a href="{{ route('categories.create') }}" class="btn btn-primary">
         <i class="bi bi-plus-circle me-1"></i> {{ __('Tambah Kategori') }}
     </a>

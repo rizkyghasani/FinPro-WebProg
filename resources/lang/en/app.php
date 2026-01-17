@@ -64,7 +64,7 @@ return [
 
     // Transaksi
     'Daftar Transaksi' => 'Transaction List',
-    'Tambah Transaksi' => 'Add Transaction',
+    'Tambah Transaksi Baru' => 'Add New Transaction',
     'Tipe Transaksi' => 'Transaction Type',
     'Tanggal' => 'Date',
     'Deskripsi/Catatan' => 'Description/Note',
@@ -74,6 +74,7 @@ return [
     'Transaksi berhasil diperbarui!' => 'Transaction successfully updated!',
     'Kurang:' => 'Short By:',
     'Telah Terkumpul:' => 'Collected:',
+    'Pilih Kategori' => 'Choose Categories',
     'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'No Expense Categories yet. Create one in Categories menu.',
     'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.' => 'No transactions recorded yet. Please add a new transaction.',
     'Saldo (Total Semua Waktu):' => 'Balance (All Time Total):',
@@ -83,6 +84,9 @@ return [
     'sebesar' => 'amounting to',
     'Konfirmasi Hapus' => 'Confirm Delete',
     'Hapus Permanen' => 'Delete Permanently',
+    'Edit Transaksi' => 'Edit Transaction',
+    'Perbarui Transaksi' => 'Update Transaction',
+    'Tambah Transaksi' => 'Add Transaction',
 
     // Anggaran
     'Manajemen Anggaran' => 'Budget Management',
@@ -110,9 +114,10 @@ return [
     'Digunakan' => 'Used',
     'Apakah Anda yakin ingin menghapus anggaran untuk kategori' => 'Are you sure you want to delete budget for category',
     'pada periode ini?' => 'in this period?',
-    'Anda belum menetapkan anggaran成份.' => 'You have not set any budget yet.',
+    'Anda belum menetapkan anggaran.' => 'You have not set any budget yet.',
     'Anggaran Pengeluaran' => 'Expense Budget',
     'Anggaran Aktif Periode:' => 'Active Budget Period:',
+    'Perbarui Anggaran' => 'Update Budget',
 
     // Tujuan
     'Manajemen Tujuan' => 'Goal Management',
@@ -127,5 +132,10 @@ return [
     'Batas Waktu:' => 'Due Date:',
     'Tujuan berhasil dihapus.' => 'Goal successfully deleted.',
     'Tujuan berhasil diperbarui!' => 'Goal successfully updated!',
+    'Daftar Tujuan Keuangan' => 'List Financial Goals',
+    'Edit Tujuan' => 'Edit Goal',
+    'Hapus Tujuan' => 'Delete Goal',
+    'Buat Tujuan Keuangan Baru' => 'Create New Financial Goal',
+    
 ];
 

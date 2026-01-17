@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
-@section('title', __('Daftar Transaksi'))
+@section('title', __('app.Daftar Transaksi'))
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-    <h2 class="mb-0">{{ __('Daftar Transaksi') }}</h2>
+    <h2 class="mb-0">{{ __('app.Daftar Transaksi') }}</h2>
     
     <a href="{{ route('transactions.create') }}" class="btn btn-success">
-        <i class="bi bi-plus-circle me-1"></i> {{ __('Tambah Transaksi') }}
+        <i class="bi bi-plus-circle me-1"></i> {{ __('app.Tambah Transaksi') }}
     </a>
 </div>
 
 <div class="card shadow-sm mb-4">
     <div class="card-body">
-        <h5 class="card-title mb-3">{{ __('Filter Transaksi') }}</h5>
+        <h5 class="card-title mb-3">{{ __('app.Filter Transaksi') }}</h5>
         <form method="GET" action="{{ route('transactions.index') }}" class="d-flex align-items-center flex-wrap gap-2">
-            <label for="start_date" class="form-label mb-0">{{ __('Dari:') }}</label>
+            <label for="start_date" class="form-label mb-0">{{ __('app.Dari:') }}</label>
             <input type="date" name="start_date" id="start_date" class="form-control form-control-sm" value="{{ $startDate->toDateString() }}" style="width: 150px;">
             
-            <label for="end_date" class="form-label mb-0">{{ __('Sampai:') }}</label>
+            <label for="end_date" class="form-label mb-0">{{ __('app.Sampai:') }}</label>
             <input type="date" name="end_date" id="end_date" class="form-control form-control-sm" value="{{ $endDate->toDateString() }}" style="width: 150px;">
             
-            <button type="submit" class="btn btn-sm btn-primary">{{ __('Filter') }}</button>
-            <a href="{{ route('transactions.index') }}" class="btn btn-sm btn-outline-secondary">{{ __('Bulan Ini') }}</a>
+            <button type="submit" class="btn btn-sm btn-primary">{{ __('app.Filter') }}</button>
+            <a href="{{ route('transactions.index') }}" class="btn btn-sm btn-outline-secondary">{{ __('app.Bulan Ini') }}</a>
         </form>
     </div>
 </div>
@@ -31,21 +31,21 @@
     <div class="col-12">
         <div class="card bg-success text-white shadow-sm">
             <div class="card-body py-2">
-                <h6 class="card-title mb-0">{{ __('Saldo (Total Semua Waktu):') }} Rp {{ number_format($currentBalance, 2, ',', '.') }}</h6>
+                <h6 class="card-title mb-0">{{ __('app.Saldo (Total Semua Waktu):') }} Rp {{ number_format($currentBalance, 2, ',', '.') }}</h6>
             </div>
         </div>
     </div>
 </div>
 
-<h4 class="h5 mb-3">{{ __('Total Periode:') }} 
-    <span class="text-primary">{{ $startDate->isoFormat('D MMM YYYY') }}</span> {{ __('sampai') }} 
+<h4 class="h5 mb-3">{{ __('app.Total Periode:') }} 
+    <span class="text-primary">{{ $startDate->isoFormat('D MMM YYYY') }}</span> {{ __('app.sampai') }} 
     <span class="text-primary">{{ $endDate->isoFormat('D MMM YYYY') }}</span>
 </h4>
 <div class="row mb-4">
     <div class="col-md-6 mb-3">
         <div class="card shadow-sm border-start border-success border-5 h-100">
             <div class="card-body">
-                <h5 class="card-title text-success">{{ __('Total Pemasukan') }}</h5>
+                <h5 class="card-title text-success">{{ __('app.Total Pemasukan') }}</h5>
                 <p class="card-text fs-4 fw-bold mb-0">Rp {{ number_format($totalIncome, 2, ',', '.') }}</p>
             </div>
         </div>
@@ -53,7 +53,7 @@
     <div class="col-md-6 mb-3">
         <div class="card shadow-sm border-start border-danger border-5 h-100">
             <div class="card-body">
-                <h5 class="card-title text-danger">{{ __('Total Pengeluaran') }}</h5>
+                <h5 class="card-title text-danger">{{ __('app.Total Pengeluaran') }}</h5>
                 <p class="card-text fs-4 fw-bold mb-0">Rp {{ number_format($totalExpense, 2, ',', '.') }}</p>
             </div>
         </div>
@@ -70,12 +70,12 @@
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
-                            <th scope="col">{{ __('Tanggal') }}</th>
-                            <th scope="col">{{ __('Deskripsi') }}</th>
-                            <th scope="col">{{ __('Kategori') }}</th>
-                            <th scope="col">{{ __('Tipe') }}</th>
-                            <th scope="col" class="text-end">{{ __('Jumlah') }} (Rp)</th>
-                            <th scope="col" class="text-center">{{ __('Aksi') }}</th>
+                            <th scope="col">{{ __('app.Tanggal') }}</th>
+                            <th scope="col">{{ __('app.Deskripsi') }}</th>
+                            <th scope="col">{{ __('app.Kategori') }}</th>
+                            <th scope="col">{{ __('app.Tipe') }}</th>
+                            <th scope="col" class="text-end">{{ __('app.Jumlah') }} (Rp)</th>
+                            <th scope="col" class="text-center">{{ __('app.Aksi') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,9 +88,9 @@
                             </td>
                             <td>
                                 @if ($transaction->type == 'income')
-                                    <span class="badge bg-success">{{ __('Pemasukan') }}</span>
+                                    <span class="badge bg-success">{{ __('app.Pemasukan') }}</span>
                                 @else
-                                    <span class="badge bg-danger">{{ __('Pengeluaran') }}</span>
+                                    <span class="badge bg-danger">{{ __('app.Pengeluaran') }}</span>
                                 @endif
                             </td>
                             <td class="text-end fw-bold text-{{ $transaction->category->type == 'income' ? 'success' : 'danger' }}">
@@ -110,18 +110,18 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="deleteModalLabel{{ $transaction->id }}">{{ __('Konfirmasi Hapus') }}</h5>
+                                                <h5 class="modal-title" id="deleteModalLabel{{ $transaction->id }}">{{ __('app.Konfirmasi Hapus') }}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                {{ __('Apakah Anda yakin ingin menghapus transaksi') }} "{{ $transaction->description }}" {{ __('sebesar') }} Rp {{ number_format($transaction->amount, 2, ',', '.') }}?
+                                                {{ __('app.Apakah Anda yakin ingin menghapus transaksi') }} "{{ $transaction->description }}" {{ __('sebesar') }} Rp {{ number_format($transaction->amount, 2, ',', '.') }}?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Batal') }}</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('app.Batal') }}</button>
                                                 <form action="{{ route('transactions.destroy', $transaction) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">{{ __('Hapus Permanen') }}</button>
+                                                    <button type="submit" class="btn btn-danger">{{ __('app.Hapus Permanen') }}</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6" class="text-center py-4 text-muted">{{ __('Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.') }}</td>
+                            <td colspan="6" class="text-center py-4 text-muted">{{ __('app.Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.') }}</td>
                         </tr>
                         @endforelse
                     </tbody>

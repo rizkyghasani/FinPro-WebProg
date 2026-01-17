@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', __('Manajemen Tujuan'))
+@section('title', __('app.Manajemen Tujuan'))
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="h3">{{ __('Daftar Tujuan Keuangan') }}</h2>
+    <h2 class="h3">{{ __('app.Daftar Tujuan Keuangan') }}</h2>
     <a href="{{ route('goals.create') }}" class="btn btn-success">
-        <i class="bi bi-star me-1"></i> {{ __('Buat Tujuan Baru') }}
+        <i class="bi bi-star me-1"></i> {{ __('app.Buat Tujuan Baru') }}
     </a>
 </div>
 
@@ -19,14 +19,14 @@
                         <h5 class="card-title text-uppercase mb-1">{{ $goal->name }}</h5>
                         <div class="dropdown">
                             <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ __('Aksi') }}
+                                {{ __('app.Aksi') }}
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('goals.edit', $goal) }}">{{ __('Edit Tujuan') }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('goals.edit', $goal) }}">{{ __('app.Edit Tujuan') }}</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <button type="button" class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#deleteGoalModal{{ $goal->id }}">
-                                        {{ __('Hapus Tujuan') }}
+                                        {{ __('app.Hapus Tujuan') }}
                                     </button>
                                 </li>
                             </ul>
@@ -34,16 +34,16 @@
                     </div>
 
                     <p class="text-muted small">
-                        {{ __('Target Akhir:') }} 
+                        {{ __('app.Target Akhir:') }} 
                         <span class="fw-bold text-info">Rp {{ number_format($goal->target_amount, 2, ',', '.') }}</span>
                         @if ($goal->due_date)
-                            ({{ __('Batas Waktu:') }} {{ \Carbon\Carbon::parse($goal->due_date)->isoFormat('D MMM YYYY') }})
+                            ({{ __('app.Batas Waktu:') }} {{ \Carbon\Carbon::parse($goal->due_date)->isoFormat('D MMM YYYY') }})
                         @endif
                     </p>
 
                     <div class="d-flex justify-content-between small text-muted">
-                        <span>{{ __('Telah Terkumpul:') }} <span class="fw-bold text-success">Rp {{ number_format($goal->current_amount, 2, ',', '.') }}</span></span>
-                        <span>{{ __('Kurang:') }} <span class="fw-bold text-danger">Rp {{ number_format($goal->remaining, 2, ',', '.') }}</span></span>
+                        <span>{{ __('app.Telah Terkumpul:') }} <span class="fw-bold text-success">Rp {{ number_format($goal->current_amount, 2, ',', '.') }}</span></span>
+                        <span>{{ __('app.Kurang:') }} <span class="fw-bold text-danger">Rp {{ number_format($goal->remaining, 2, ',', '.') }}</span></span>
                     </div>
 
                     {{-- Progress Bar --}}
@@ -67,18 +67,18 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteGoalModalLabel{{ $goal->id }}">{{ __('Konfirmasi Hapus') }}</h5>
+                        <h5 class="modal-title" id="deleteGoalModalLabel{{ $goal->id }}">{{ __('app.Konfirmasi Hapus') }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         {{ __('Apakah Anda yakin ingin menghapus tujuan') }} "{{ $goal->name }}" {{ __('secara permanen? Semua data tabungan akan hilang.') }}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Batal') }}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('app.Batal') }}</button>
                         <form action="{{ route('goals.destroy', $goal) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">{{ __('Hapus Permanen') }}</button>
+                            <button type="submit" class="btn btn-danger">{{ __('app.Hapus Permanen') }}</button>
                         </form>
                     </div>
                 </div>

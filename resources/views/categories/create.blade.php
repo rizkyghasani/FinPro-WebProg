@@ -14,7 +14,7 @@
         <form method="POST" action="{{ route('categories.store') }}">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">{{ __('Nama Kategori') }}</label>
+                <label for="name" class="form-label">{{ __('app.Nama Kategori') }}</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autofocus>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
