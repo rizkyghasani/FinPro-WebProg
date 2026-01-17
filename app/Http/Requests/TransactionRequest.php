@@ -14,33 +14,22 @@ class TransactionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        // Kriteria Keamanan: Hanya user terotentikasi yang boleh membuat transaksi.
         return Auth::check();
     }
 
-    /**
-     * Dapatkan aturan validasi yang berlaku untuk request.
-     */
     public function rules(): array
     {
-        // Ambil ID user yang sedang login
         $userId = Auth::id();
 
         return [
-            // amount: Wajib, harus berupa angka, minimal 1, dengan 2 angka di belakang koma (decimal).
             'amount' => 'required|numeric|min:1|decimal:0,2',
             
-            // type: Wajib, nilainya harus 'income' atau 'expense'.
             'type' => ['required', Rule::in(['income', 'expense'])],
 
-            // description: Wajib, string, maksimal 255 karakter.
             'description' => 'required|string|max:255',
 
-            // date: Wajib, harus berupa tanggal yang valid, dan tidak boleh di masa depan.
             'date' => 'required|date|before_or_equal:today',
 
-            // category_id: Wajib, harus ada di tabel categories, dan hanya kategori
-            // yang dimiliki oleh user yang sedang login ($userId) yang valid.
             'category_id' => [
                 'required',
                 'integer',
@@ -51,9 +40,6 @@ class TransactionRequest extends FormRequest
         ];
     }
     
-    /**
-     * Kustomisasi pesan validasi (Opsional, untuk tampilan yang lebih ramah).
-     */
     public function messages(): array
     {
         return [

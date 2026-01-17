@@ -10,9 +10,6 @@ class Goal extends Model
 {
     use HasFactory;
 
-    /**
-     * Properti yang dapat diisi massal.
-     */
     protected $fillable = [
         'user_id',
         'name',
@@ -21,9 +18,7 @@ class Goal extends Model
         'due_date',
     ];
 
-    /**
-     * Relasi ke User (setiap tujuan dimiliki oleh satu user).
-     */
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

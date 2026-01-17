@@ -22,7 +22,6 @@
                 <form action="{{ route('budgets.store') }}" method="POST">
                     @csrf
                     
-                    {{-- Batas (Limit) Anggaran --}}
                     <div class="mb-3">
                         <label for="limit" class="form-label">{{ __('Batas Anggaran') }} (Rp) <span class="text-danger">*</span></label>
                         <input type="number" class="form-control @error('limit') is-invalid @enderror" id="limit" name="limit" value="{{ old('limit') }}" step="0.01" min="1" placeholder="Misal: 500000" required autofocus>
@@ -31,7 +30,6 @@
                         @enderror
                     </div>
                     
-                    {{-- Kategori Pengeluaran --}}
                     <div class="mb-3">
                         <label for="category_id" class="form-label">{{ __('Kategori') }} <span class="text-danger">*</span></label>
                         <select class="form-select @error('category_id') is-invalid @enderror" id="category_id" name="category_id" required>
@@ -53,7 +51,6 @@
                     </div>
                     
                     <div class="row mb-3">
-                        {{-- Tanggal Mulai --}}
                         <div class="col-md-6">
                             <label for="start_date" class="form-label">{{ __('Periode Mulai') }} <span class="text-danger">*</span></label>
                             <input type="date" class="form-control @error('start_date') is-invalid @enderror" id="start_date" name="start_date" value="{{ old('start_date', date('Y-m-01')) }}" required>
@@ -62,7 +59,6 @@
                             @enderror
                         </div>
 
-                        {{-- Tanggal Berakhir --}}
                         <div class="col-md-6">
                             <label for="end_date" class="form-label">{{ __('Periode Berakhir') }} <span class="text-danger">*</span></label>
                             <input type="date" class="form-control @error('end_date') is-invalid @enderror" id="end_date" name="end_date" value="{{ old('end_date', date('Y-m-t')) }}" required>

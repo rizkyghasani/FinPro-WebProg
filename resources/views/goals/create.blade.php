@@ -13,7 +13,6 @@
                 <form action="{{ route('goals.store') }}" method="POST">
                     @csrf
                     
-                    {{-- Nama Tujuan --}}
                     <div class="mb-3">
                         <label for="name" class="form-label">{{ __('Nama Tujuan') }} <span class="text-danger">*</span></label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autofocus>
@@ -22,7 +21,6 @@
                         @enderror
                     </div>
                     
-                    {{-- Target Amount --}}
                     <div class="mb-3">
                         <label for="target_amount" class="form-label">{{ __('Target Jumlah') }} (Rp) <span class="text-danger">*</span></label>
                         <input type="number" class="form-control @error('target_amount') is-invalid @enderror" id="target_amount" name="target_amount" value="{{ old('target_amount') }}" step="0.01" min="10000" placeholder="Misal: 1000000" required>
@@ -32,7 +30,6 @@
                     </div>
                     
                     <div class="row mb-3">
-                        {{-- Current Amount --}}
                         <div class="col-md-6">
                             <label for="current_amount" class="form-label">{{ __('Jumlah Saat Ini') }} (Rp)</label>
                             <input type="number" class="form-control @error('current_amount') is-invalid @enderror" id="current_amount" name="current_amount" value="{{ old('current_amount', 0) }}" step="0.01" placeholder="Misal: 500000">
@@ -41,7 +38,6 @@
                             @enderror
                         </div>
 
-                        {{-- Due Date --}}
                         <div class="col-md-6">
                             <label for="due_date" class="form-label">{{ __('Batas Waktu Target (Opsional)') }}</label>
                             <input type="date" class="form-control @error('due_date') is-invalid @enderror" id="due_date" name="due_date" value="{{ old('due_date') }}" min="{{ date('Y-m-d') }}">

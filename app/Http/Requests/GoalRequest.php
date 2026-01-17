@@ -16,11 +16,8 @@ class GoalRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:100',
-            // target_amount: Wajib, angka, minimal 10000
             'target_amount' => 'required|numeric|min:10000|decimal:0,2',
-            // current_amount: Opsional, angka, harus kurang dari target
             'current_amount' => 'nullable|numeric|lte:target_amount',
-            // due_date: Opsional, harus tanggal setelah hari ini
             'due_date' => 'nullable|date|after_or_equal:today',
         ];
     }

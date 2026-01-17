@@ -19,20 +19,17 @@ class BudgetRequest extends FormRequest
         $userId = Auth::id();
 
         return [
-            // amount: Wajib, angka, minimal 1
             'limit' => 'required|numeric|min:1|decimal:0,2',
 
-            // start_date & end_date: Wajib, harus tanggal yang valid.
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
 
-            // category_id: Wajib, harus milik user, dan hanya boleh kategori EXPENSE (pengeluaran).
             'category_id' => [
                 'required',
                 'integer',
                 Rule::exists('categories', 'id')->where(function ($query) use ($userId) {
                     $query->where('user_id', $userId)
-                          ->where('type', 'expense'); // Anggaran hanya untuk pengeluaran
+                          ->where('type', 'expense'); 
                 }),
             ],
         ];

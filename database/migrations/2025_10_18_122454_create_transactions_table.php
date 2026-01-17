@@ -6,18 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-// database/migrations/..._create_transactions_table.php
 
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            // Relasi ke User (Kriteria 3: Akses terbatas per user)
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            // Relasi ke Category (Membuat transaksi lebih terstruktur)
             $table->foreignId('category_id')->constrained()->onDelete('restrict');
             
             $table->string('description');

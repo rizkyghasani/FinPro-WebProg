@@ -16,17 +16,13 @@ use Illuminate\Support\Facades\Auth;
 |--------------------------------------------------------------------------
 */
 
-// Route untuk Halaman Utama (Redirect ke Login jika belum login)
 Route::get('/', function () {
-    // Jika user sudah login, arahkan ke dashboard.
     if (Auth::check()) {
         return redirect()->route('dashboard');
     }
-    // Jika belum login, arahkan ke halaman login.
     return redirect()->route('login');
 })->name('welcome');
 
-// Kriteria 6: Route untuk Mengganti Bahasa (Lokalisasi)
 Route::get('lang/{locale}', function (string $locale) {
     if (! in_array($locale, ['en', 'id'])) {
         return back()->with('error', 'Pilihan bahasa tidak valid.');
@@ -56,8 +52,6 @@ Route::middleware(['auth', 'set.locale'])->group(function () {
 
     Route::get('profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
     
-    // Route untuk Profile (dari Breeze)
-    // Route::view('profile', 'profile.edit')->name('profile.edit');
     Route::patch('profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::delete('profile', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
 });

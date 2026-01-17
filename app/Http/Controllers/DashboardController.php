@@ -7,21 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Budget;
 use App\Models\Goal;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
-    /**
-     * Menampilkan dashboard dengan data yang difilter dan data chart.
-     */
     public function index(Request $request)
     {
         $user = Auth::user();
         $today = Carbon::now()->toDateString(); // Tanggal hari ini
 
-        // --- 1. Tentukan Periode Waktu Filter ---
-        
         $startDate = $request->input('start_date') 
             ? Carbon::parse($request->input('start_date')) 
             : Carbon::now()->startOfMonth();
@@ -30,7 +26,6 @@ class DashboardController extends Controller
             ? Carbon::parse($request->input('end_date')) 
             : Carbon::now()->endOfMonth();
 
-        // 2. Saldo Total & Statistik Periode yang Difilter (Logika tetap sama)
         $totalIncome = $user->transactions()->where('type', 'income')->sum('amount');
         $totalExpense = $user->transactions()->where('type', 'expense')->sum('amount');
         $currentBalance = $totalIncome - $totalExpense;
@@ -42,10 +37,6 @@ class DashboardController extends Controller
         $filteredExpense = $filteredTransactionsQuery->clone()->where('type', 'expense')->sum('amount');
         $filteredNet = $filteredIncome - $filteredExpense;
 
-
-        // --- 3. Logika Anggaran (DISEMPURNAKAN) ---
-        
-        // Hanya ambil anggaran yang AKTIF hari ini (Anggaran yang periodenya mencakup tanggal saat ini)
         $budgets = $user->budgets()
                         ->where('start_date', '<=', $today)
                         ->where('end_date', '>=', $today)
@@ -61,7 +52,6 @@ class DashboardController extends Controller
 
         if ($budgetSummary['totalLimit'] > 0) {
             foreach ($budgets as $budget) {
-                // Hitung penggunaan HANYA untuk periode anggaran tersebut
                 $usedAmount = $user->transactions()
                                     ->where('type', 'expense')
                                     ->where('category_id', $budget->category_id)
@@ -73,7 +63,6 @@ class DashboardController extends Controller
             $budgetSummary['percentage'] = round(($budgetSummary['totalUsed'] / $budgetSummary['totalLimit']) * 100);
         }
         
-        // 4. Data Tujuan (Ringkasan Progres Terdekat) - Logika tetap sama
         $nextGoal = $user->goals()
                          ->where('current_amount', '<', DB::raw('target_amount'))
                          ->orderBy('due_date', 'asc')
@@ -86,7 +75,6 @@ class DashboardController extends Controller
              $nextGoal->remaining = $nextGoal->target_amount - $nextGoal->current_amount;
         }
 
-        // 5. Data untuk Chart (Menggunakan data yang difilter) - Logika tetap sama
         $baseQueryChart = $user->transactions()
             ->whereBetween('date', [$startDate->toDateString(), $endDate->toDateString()]);
 
@@ -114,7 +102,7 @@ class DashboardController extends Controller
             'filteredNet', 
             'expenseChartData',
             'incomeChartData',
-            'budgetSummary', // Diperbarui
+            'budgetSummary', 
             'nextGoal',
             'startDate', 
             'endDate'

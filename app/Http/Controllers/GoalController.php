@@ -8,14 +8,10 @@ use App\Http\Requests\GoalRequest;
 
 class GoalController extends Controller
 {
-    /**
-     * Tampilkan daftar tujuan.
-     */
     public function index()
     {
         $goals = Auth::user()->goals()->latest()->get();
 
-        // Hitung progres untuk tampilan
         foreach ($goals as $goal) {
             $goal->percentage = ($goal->target_amount > 0) 
                                 ? round(($goal->current_amount / $goal->target_amount) * 100) 
@@ -36,7 +32,6 @@ class GoalController extends Controller
         $validatedData = $request->validated();
         $validatedData['user_id'] = Auth::id();
 
-        // Pastikan current_amount diisi 0 jika input kosong
         $validatedData['current_amount'] = $validatedData['current_amount'] ?? 0;
 
         Goal::create($validatedData);
@@ -59,7 +54,6 @@ class GoalController extends Controller
         }
         
         $validatedData = $request->validated();
-        // Pastikan current_amount diisi 0 jika input kosong
         $validatedData['current_amount'] = $validatedData['current_amount'] ?? 0;
 
         $goal->update($validatedData);

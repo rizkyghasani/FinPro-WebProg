@@ -10,7 +10,6 @@
     </a>
 </div>
 
-{{-- Form Filter Tanggal BARU --}}
 <div class="card shadow-sm mb-4">
     <div class="card-body">
         <h5 class="card-title mb-3">{{ __('Filter Anggaran') }}</h5>
@@ -27,15 +26,12 @@
     </div>
 </div>
 
-{{-- Judul Periode --}}
 <h4 class="h5 mb-3">{{ __('Anggaran Aktif Periode:') }} 
     <span class="text-primary">{{ $startDate->isoFormat('D MMM YYYY') }}</span> {{ __('sampai') }} 
     <span class="text-primary">{{ $endDate->isoFormat('D MMM YYYY') }}</span>
 </h4>
 
-{{-- Ringkasan Total Anggaran --}}
 <div class="row mb-4">
-    {{-- Total Batas Anggaran (Filterable Total) --}}
     <div class="col-md-4 mb-3">
         <div class="card shadow-sm border-info h-100">
             <div class="card-body">
@@ -46,7 +42,6 @@
         </div>
     </div>
     
-    {{-- Total Digunakan (Filterable Total) --}}
     <div class="col-md-4 mb-3">
         <div class="card shadow-sm border-danger h-100">
             <div class="card-body">
@@ -57,7 +52,6 @@
         </div>
     </div>
     
-    {{-- Total Sisa Anggaran --}}
     <div class="col-md-4 mb-3">
         <div class="card shadow-sm border-success h-100">
             <div class="card-body">
@@ -69,7 +63,6 @@
     </div>
 </div>
 
-{{-- Daftar Anggaran --}}
 <div class="row">
     @forelse ($budgets as $budget)
         <div class="col-lg-6 mb-4">
@@ -124,7 +117,6 @@
             </div>
         </div>
 
-        <!-- Modal Konfirmasi Hapus Anggaran -->
         <div class="modal fade" id="deleteBudgetModal{{ $budget->id }}" tabindex="-1" aria-labelledby="deleteBudgetModalLabel{{ $budget->id }}" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -133,7 +125,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        {{ __('Apakah Anda yakin ingin menghapus anggaran untuk kategori') }} **{{ $budget->category->name }}** {{ __('pada periode ini?') }}
+                        {{ __('Apakah Anda yakin ingin menghapus anggaran untuk kategori') }} {{ $budget->category->name }} {{ __('pada periode ini?') }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Batal') }}</button>

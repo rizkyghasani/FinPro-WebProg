@@ -18,16 +18,16 @@ body.auth-background {
 }
 
 .auth-background .card {
-    background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan agar background terlihat */
+    background-color: rgba(255, 255, 255, 0.95); 
     border-radius: 0.5rem;
 }
 
 .transaction-list-container {
-    max-height: 500px; /* Tentukan tinggi maksimum tabel sebelum scroll muncul */
-    overflow-y: auto;  /* Mengaktifkan scroll vertikal */
-    padding-right: 15px; /* Memberi ruang agar scrollbar tidak menempel ke tepi */
+    max-height: 500px;
+    overflow-y: auto;  
+    padding-right: 15px; 
 }
 
 .transaction-list-container table {
-    margin-bottom: 0; /* Menghapus margin bawah tabel agar tidak ada ruang kosong di dalam kontainer */
+    margin-bottom: 0; 
 }

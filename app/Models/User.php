@@ -53,39 +53,21 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS (Untuk Kriteria Authorization)
-    |--------------------------------------------------------------------------
-    */
-
-    /**
-     * Seorang user memiliki banyak kategori.
-     */
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class);
     }
 
-    /**
-     * Seorang user memiliki banyak transaksi. (BARU)
-     */
     public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
     }
     
-    /**
-     * Seorang user memiliki banyak anggaran. (BARU)
-     */
     public function budgets(): HasMany
     {
         return $this->hasMany(Budget::class);
     }
 
-    /**
-     * Seorang user memiliki banyak tujuan keuangan. (BARU)
-     */
     public function goals(): HasMany
     {
         return $this->hasMany(Goal::class);

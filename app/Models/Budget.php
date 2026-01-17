@@ -18,26 +18,16 @@ class Budget extends Model
         'end_date',
     ];
 
-    /**
-     * Kolom yang harus di-cast ke tipe data tertentu.
-     * HANYA cast kolom tanggal ke tipe 'date'.
-     */
     protected $casts = [
-        'start_date' => 'date', // <-- WAJIB
-        'end_date' => 'date',   // <-- WAJIB
+        'start_date' => 'date', 
+        'end_date' => 'date',   
     ];
 
-    /**
-     * Relasi ke User.
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Relasi ke Category.
-     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

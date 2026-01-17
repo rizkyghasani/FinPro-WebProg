@@ -11,7 +11,6 @@
     </a>
 </div>
 
-{{-- Form Filter Tanggal BARU --}}
 <div class="card shadow-sm mb-4">
     <div class="card-body">
         <h5 class="card-title mb-3">{{ __('Filter Transaksi') }}</h5>
@@ -28,7 +27,6 @@
     </div>
 </div>
 
-{{-- Ringkasan Saldo Global --}}
 <div class="row mb-3">
     <div class="col-12">
         <div class="card bg-success text-white shadow-sm">
@@ -39,7 +37,6 @@
     </div>
 </div>
 
-{{-- Ringkasan Filtered Period --}}
 <h4 class="h5 mb-3">{{ __('Total Periode:') }} 
     <span class="text-primary">{{ $startDate->isoFormat('D MMM YYYY') }}</span> {{ __('sampai') }} 
     <span class="text-primary">{{ $endDate->isoFormat('D MMM YYYY') }}</span>
@@ -68,7 +65,6 @@
 <div class="card shadow-sm">
     <div class="card-body">
         
-        {{-- Kontainer Scrollable (Vertical) --}}
         <div class="transaction-list-container">
             <div class="table-responsive">
                 <table class="table table-hover align-middle">
@@ -118,7 +114,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                {{ __('Apakah Anda yakin ingin menghapus transaksi') }} **"{{ $transaction->description }}"** {{ __('sebesar') }} **Rp {{ number_format($transaction->amount, 2, ',', '.') }}**?
+                                                {{ __('Apakah Anda yakin ingin menghapus transaksi') }} "{{ $transaction->description }}" {{ __('sebesar') }} Rp {{ number_format($transaction->amount, 2, ',', '.') }}?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Batal') }}</button>

@@ -3,6 +3,13 @@
 @section('title', __('Dashboard Utama'))
 
 @section('content')
+
+<!-- {{-- Cek Locale Aktif --}}
+<p class="text-danger">LOCALE AKTIF: {{ App::getLocale() }}</p> 
+
+{{-- Uji Coba Terjemahan --}}
+<p class="text-danger">UJI COBA: {{ __('Ringkasan Keuangan Anda') }}</p> -->
+
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
     <h2 class="h3 mb-3 mb-md-0">{{ __('Ringkasan Keuangan Anda') }}</h2>
 
@@ -34,17 +41,32 @@
     {{-- Kartu Anggaran dan Tujuan --}}
     <div class="col-md-6 mb-3">
         <div class="row h-100">
+        {{-- Ringkasan Anggaran --}}
             <div class="col-12 mb-6">
                 <div class="card shadow-sm border-start border-info border-5 h-100">
                     <div class="card-body">
                         <h6 class="text-info text-uppercase">{{ __('Anggaran Bulan Ini') }}</h6>
                         @if ($budgetSummary['totalLimit'] > 0)
+                            @php
+                                // Tentukan warna teks: Merah jika sisa anggaran < 0, Hijau jika >= 0
+                                $remainingClass = $budgetSummary['remaining'] < 0 ? 'text-danger' : 'text-success';
+                                $percentage = $budgetSummary['percentage'] > 100 ? 100 : $budgetSummary['percentage'];
+                                $progressClass = $budgetSummary['percentage'] > 100 ? 'bg-danger' : 'bg-info';
+                            @endphp
+                            
                             <p class="mb-1 small text-muted">{{ $budgetSummary['period'] }}</p>
                             <p class="mb-1 small">{{ __('Batas:') }} Rp {{ number_format($budgetSummary['totalLimit'], 0, ',', '.') }}</p>
+                            
                             <div class="progress mb-2" style="height: 10px;">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: {{ $budgetSummary['percentage'] }}%"></div>
+                                <div class="progress-bar {{ $progressClass }}" role="progressbar" style="width: {{ $percentage }}%"></div>
                             </div>
-                            <p class="text-muted small mb-0">{{ __('Sisa Anggaran:') }} <span class="fw-bold text-success">Rp {{ number_format($budgetSummary['remaining'], 0, ',', '.') }}</span></p>
+                            
+                            {{-- Terapkan warna dinamis di sini --}}
+                            <p class="text-muted small mb-0">{{ __('Sisa Anggaran:') }} 
+                                <span class="fw-bold {{ $remainingClass }}">
+                                    Rp {{ number_format($budgetSummary['remaining'], 0, ',', '.') }}
+                                </span>
+                            </p>
                         @else
                             <p class="text-muted small mb-0">{{ __('Belum ada anggaran aktif bulan ini.') }}</p>
                             <a href="{{ route('budgets.create') }}" class="btn btn-sm btn-outline-info mt-2">{{ __('Buat Anggaran') }}</a>
@@ -124,11 +146,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Ambil data dari Blade
+
         const expenseData = @json($expenseChartData);
         const incomeData = @json($incomeChartData);
         
-        // ... (Kode JavaScript Chart.js yang sama)
         const colors = [
             '#dc3545', '#ffc107', '#198754', '#0d6efd', '#6f42c1', 
             '#fd7e14', '#20c997', '#adb5bd', '#e83e8c', '#6610f2'

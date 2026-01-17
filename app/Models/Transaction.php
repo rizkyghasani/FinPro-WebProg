@@ -17,23 +17,18 @@ class Transaction extends Model
     protected $fillable = [
         'user_id',
         'category_id',
-        'type', // 'income' atau 'expense'
+        'type', 
         'amount',
         'description',
         'date',
     ];
 
-    /**
-     * Relasi ke User (setiap transaksi dimiliki oleh satu user).
-     */
+ 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Relasi ke Category (setiap transaksi memiliki satu kategori).
-     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

@@ -35,6 +35,14 @@
                         </div>
                     </div>
                     
+                    <div class="mb-3">
+                        <label for="description" class="form-label">{{ __('Deskripsi/Catatan') }} <span class="text-danger">*</span></label>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" placeholder="Misal: Gaji bulan ini" required>{{ old('description') }}</textarea>
+                        @error('description')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="category_id" class="form-label">{{ __('Kategori') }} <span class="text-danger">*</span></label>
@@ -64,13 +72,6 @@
                         </div>
                     </div>
                     
-                    <div class="mb-3">
-                        <label for="description" class="form-label">{{ __('Deskripsi/Catatan') }} <span class="text-danger">*</span></label>
-                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" placeholder="Misal: Gaji bulan ini" required>{{ old('description') }}</textarea>
-                        @error('description')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
 
                     <div class="d-flex justify-content-end">
                         <a href="{{ route('transactions.index') }}" class="btn btn-outline-secondary me-2">{{ __('Batal') }}</a>
@@ -94,13 +95,11 @@
         function filterCategories() {
             const selectedType = typeSelect.value;
             
-            // Atur ulang category_id
             categorySelect.value = "";
             
             categoryOptions.forEach(option => {
                 const categoryType = option.getAttribute('data-type');
                 
-                // Tampilkan opsi jika tidak memiliki data-type (opsi default) atau jika tipenya cocok
                 if (!categoryType || categoryType === selectedType) {
                     option.style.display = '';
                 } else {
@@ -109,10 +108,8 @@
             });
         }
         
-        // Panggil saat halaman dimuat (jika ada data old('type'))
         filterCategories();
 
-        // Panggil setiap kali tipe transaksi berubah
         typeSelect.addEventListener('change', filterCategories);
     });
 </script>

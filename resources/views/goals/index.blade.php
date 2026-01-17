@@ -10,7 +10,6 @@
     </a>
 </div>
 
-{{-- Daftar Tujuan --}}
 <div class="row">
     @forelse ($goals as $goal)
         <div class="col-lg-6 mb-4">
@@ -72,7 +71,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        {{ __('Apakah Anda yakin ingin menghapus tujuan') }} **"{{ $goal->name }}"** {{ __('secara permanen? Semua data tabungan akan hilang.') }}
+                        {{ __('Apakah Anda yakin ingin menghapus tujuan') }} "{{ $goal->name }}" {{ __('secara permanen? Semua data tabungan akan hilang.') }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Batal') }}</button>

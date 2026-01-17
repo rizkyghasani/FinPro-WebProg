@@ -8,14 +8,13 @@
         <div class="card shadow-sm">
             <div class="card-header bg-white border-0 py-3">
                 <h4 class="mb-0">{{ __('Edit Anggaran') }}</h4>
-                <p class="text-muted mb-0">{{ __('Mengubah batas dan periode anggaran untuk') }} **{{ $budget->category->name }}**</p>
+                <p class="text-muted mb-0">{{ __('Mengubah batas dan periode anggaran untuk') }} {{ $budget->category->name }}</p>
             </div>
             <div class="card-body">
                 <form action="{{ route('budgets.update', $budget) }}" method="POST">
                     @csrf
                     @method('PUT')
                     
-                    {{-- Batas (Limit) Anggaran --}}
                     <div class="mb-3">
                         <label for="limit" class="form-label">{{ __('Batas Anggaran') }} (Rp) <span class="text-danger">*</span></label>
                         <input 
@@ -35,11 +34,9 @@
                         @enderror
                     </div>
                     
-                    {{-- Kategori Pengeluaran (Disabled saat Edit) --}}
                     <div class="mb-3">
                         <label for="category_id" class="form-label">{{ __('Kategori') }} <span class="text-danger">*</span></label>
                         <select class="form-select" id="category_id" name="category_id" disabled>
-                            {{-- Tampilkan kategori saat ini saja --}}
                             <option value="{{ $budget->category_id }}" selected>{{ $budget->category->name }} ({{ __('Pengeluaran') }})</option>
                         </select>
                         <input type="hidden" name="category_id" value="{{ $budget->category_id }}">

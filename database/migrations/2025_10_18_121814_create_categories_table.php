@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            // Relasi ke User (Kriteria 3: Setiap kategori milik satu user)
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             
             $table->string('name', 50); // Nama Kategori (Makanan, Gaji, dll.)
-            $table->enum('type', ['income', 'expense']); // Tipe: Pemasukan atau Pengeluaran
+            $table->enum('type', ['income', 'expense']); 
             $table->string('icon', 50)->nullable(); // Opsional: untuk ikon tampilan
 
             $table->timestamps();

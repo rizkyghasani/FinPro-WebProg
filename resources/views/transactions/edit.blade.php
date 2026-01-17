@@ -96,11 +96,10 @@
             const selectedType = typeSelect.value;
             let categoryFound = false;
             
-            // Filter kategori yang tersedia
             categoryOptions.forEach(option => {
                 const categoryType = option.getAttribute('data-type');
                 
-                if (!categoryType) return; // Lewati opsi default
+                if (!categoryType) return; 
                 
                 if (categoryType === selectedType) {
                     option.style.display = '';
@@ -109,20 +108,17 @@
                     }
                 } else {
                     option.style.display = 'none';
-                    option.selected = false; // Pastikan opsi yang tersembunyi tidak terpilih
+                    option.selected = false; 
                 }
             });
             
-            // Jika kategori sebelumnya tidak cocok dengan tipe yang baru, paksa pilih ulang
             if (!categoryFound && categorySelect.value !== "") {
                 categorySelect.value = ""; 
             }
         }
         
-        // Panggil saat halaman dimuat
         filterCategories();
 
-        // Panggil setiap kali tipe transaksi berubah
         typeSelect.addEventListener('change', filterCategories);
     });
 </script>

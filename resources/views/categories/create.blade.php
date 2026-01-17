@@ -9,13 +9,10 @@
 
 <div class="card shadow-sm">
     <div class="card-header bg-white">
-        {{ __('Isi detail kategori di bawah ini.') }}
     </div>
     <div class="card-body">
         <form method="POST" action="{{ route('categories.store') }}">
             @csrf
-
-            {{-- Nama Kategori (Field Wajib) --}}
             <div class="mb-3">
                 <label for="name" class="form-label">{{ __('Nama Kategori') }}</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autofocus>
@@ -24,7 +21,6 @@
                 @enderror
             </div>
 
-            {{-- Tipe Kategori (Pemasukan/Pengeluaran) --}}
             <div class="mb-3">
                 <label for="type" class="form-label">{{ __('Tipe') }}</label>
                 <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" required>
@@ -37,7 +33,6 @@
                 @enderror
             </div>
 
-            {{-- Icon (Opsional) --}}
             <div class="mb-3">
                 <label for="icon" class="form-label">{{ __('Ikon (Opsional)') }}</label>
                 <input type="text" class="form-control @error('icon') is-invalid @enderror" id="icon" name="icon" value="{{ old('icon') }}">

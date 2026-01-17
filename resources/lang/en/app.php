@@ -15,14 +15,40 @@ return [
     'Pilih Tipe' => 'Select Type',
     'Unauthorized action.' => 'Unauthorized action. You do not have access to this data.',
     'Perbarui' => 'Update',
+    
+    // Dashboard & Statistik
+    'Ringkasan Keuangan Anda' => 'Your Financial Summary',
+    'SALDO TOTAL SAAT INI' => 'CURRENT TOTAL BALANCE',
+    'Ringkasan semua waktu' => 'All-time summary',
+    'Anggaran Bulan Ini' => 'Budget This Month',
+    'Buat Anggaran' => 'Create Budget',
+    'Sisa Anggaran:' => 'Remaining Budget:',
+    'Batas:' => 'Limit:',
+    'Total Pemasukan' => 'Total Income',
+    'Total Pengeluaran' => 'Total Expense',
+    'Tabungan Bersih' => 'Net Savings',
+    'Statistik Periode:' => 'Period Statistics:', 
+    'sampai' => 'to',
+    'Distribusi Pengeluaran' => 'Expense Distribution',
+    'Distribusi Pemasukan' => 'Income Distribution',
+    'Belum ada data pengeluaran pada periode ini.' => 'No expense data for this period.',
+    'Belum ada data pemasukan pada periode ini.' => 'No income data for this period.',
+    'Tujuan Terdekat' => 'Nearest Goal',
+    'Tidak ada tujuan yang sedang berjalan.' => 'No goals currently running.',
+    'Dari:' => 'From:',
+    'Filter' => 'Filter',
+    'Bulan Ini' => 'This Month',
+    'Anggaran hanya berlaku untuk Pengeluaran.' => 'Budget only applies to Expenses.',
+    'Periode Anggaran:' => 'Budget Period:',
+    'Dashboard Utama' => 'Main Dashboard',
 
-    // Features
+    // Fitur
     'Kategori' => 'Categories',
     'Transaksi' => 'Transactions',
     'Anggaran' => 'Budgets',
     'Tujuan Keuangan' => 'Financial Goals',
 
-    // Categories
+    // Kategori
     'Manajemen Kategori' => 'Category Management',
     'Daftar Kategori Keuangan' => 'Financial Categories List',
     'Tambah Kategori' => 'Add Category',
@@ -34,8 +60,9 @@ return [
     'Berhasil membuat Kategori baru!' => 'Successfully created a new Category!',
     'Kategori berhasil diperbarui.' => 'Category successfully updated.',
     'Kategori berhasil dihapus.' => 'Category successfully deleted.',
+    'Belum ada kategori yang ditambahkan.' => 'No categories added yet.',
 
-    // Transactions
+    // Transaksi
     'Daftar Transaksi' => 'Transaction List',
     'Tambah Transaksi' => 'Add Transaction',
     'Tipe Transaksi' => 'Transaction Type',
@@ -45,12 +72,19 @@ return [
     'Simpan Transaksi' => 'Save Transaction',
     'Transaksi baru berhasil ditambahkan!' => 'New transaction successfully added!',
     'Transaksi berhasil diperbarui!' => 'Transaction successfully updated!',
-    'Kurang:' => 'Remaining:',
-    'Telah Terkumpul:' => 'Currently Saved:',
-    'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'No Expense Categories yet. Please create one in the Categories menu.',
+    'Kurang:' => 'Short By:',
+    'Telah Terkumpul:' => 'Collected:',
+    'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'No Expense Categories yet. Create one in Categories menu.',
     'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.' => 'No transactions recorded yet. Please add a new transaction.',
-    
-    // Budgets
+    'Saldo (Total Semua Waktu):' => 'Balance (All Time Total):',
+    'Total Periode:' => 'Total Period:',
+    'Filter Transaksi' => 'Transaction Filter',
+    'Apakah Anda yakin ingin menghapus transaksi' => 'Are you sure you want to delete transaction',
+    'sebesar' => 'amounting to',
+    'Konfirmasi Hapus' => 'Confirm Delete',
+    'Hapus Permanen' => 'Delete Permanently',
+
+    // Anggaran
     'Manajemen Anggaran' => 'Budget Management',
     'Buat Anggaran Baru' => 'Create New Budget',
     'Batas Anggaran' => 'Budget Limit',
@@ -63,8 +97,24 @@ return [
     'Digunakan:' => 'Used:',
     'Batas:' => 'Limit:',
     'Anggaran berhasil diperbarui.' => 'Budget successfully updated.',
+    'Belum ada anggaran aktif bulan ini.' => 'No active budgets this month.',
+    'MELEBIHI BATAS' => 'OVER LIMIT',
+    'Filter Anggaran' => 'Budget Filter',
+    'Total batas anggaran yang aktif dalam periode ini.' => 'Total budget limit active in this period.',
+    'Total penggunaan yang terekam dalam periode filter.' => 'Total usage recorded in the filter period.',
+    'Total batas dikurangi total digunakan.' => 'Total limit minus total used.',
+    'Edit Anggaran' => 'Edit Budget',
+    'Hapus Anggaran' => 'Delete Budget',
+    'Digunakan (Total Periode):' => 'Used (Total Period):',
+    'Sisa:' => 'Remaining:',
+    'Digunakan' => 'Used',
+    'Apakah Anda yakin ingin menghapus anggaran untuk kategori' => 'Are you sure you want to delete budget for category',
+    'pada periode ini?' => 'in this period?',
+    'Anda belum menetapkan anggaran成份.' => 'You have not set any budget yet.',
+    'Anggaran Pengeluaran' => 'Expense Budget',
+    'Anggaran Aktif Periode:' => 'Active Budget Period:',
 
-    // Goals
+    // Tujuan
     'Manajemen Tujuan' => 'Goal Management',
     'Buat Tujuan Baru' => 'Create New Goal',
     'Nama Tujuan' => 'Goal Name',
@@ -75,4 +125,7 @@ return [
     'Tujuan berhasil dibuat!' => 'Goal successfully created!',
     'Target Akhir:' => 'Final Target:',
     'Batas Waktu:' => 'Due Date:',
+    'Tujuan berhasil dihapus.' => 'Goal successfully deleted.',
+    'Tujuan berhasil diperbarui!' => 'Goal successfully updated!',
 ];
+

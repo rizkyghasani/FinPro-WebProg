@@ -13,25 +13,22 @@
     <!-- Optional: Bootstrap Icons (bi) untuk tampilan icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Custom Style untuk Sidebar dan perbaikan Navbar Fixed -->
     <style>
-        /* Mengatur padding di bagian atas body agar konten tidak tertutup fixed-top navbar */
         body {
             padding-top: 56px; /* Tinggi standar navbar Bootstrap */
         }
         
         .sidebar {
             position: fixed;
-            top: 56px; /* Mulai tepat di bawah Navbar */
+            top: 56px; 
             bottom: 0;
             left: 0;
             z-index: 1000;
-            padding: 0; /* Padding diatur di dalam elemen ul/li */
+            padding: 0; 
             box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            overflow-y: auto; /* Memungkinkan scrolling di sidebar */
+            overflow-y: auto; 
         }
 
-        /* Hanya pada layar desktop (md ke atas), ubah padding kiri konten utama */
         @media (min-width: 768px) {
             main.col-md-9 {
                 margin-left: 16.666667%; /* 2/12 kolom */
@@ -57,20 +54,15 @@
     </style>
 </head>
 <body>
-    <!-- Navbar Bootstrap Top -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
         <div class="container-fluid">
-            <!-- Tombol Toggle untuk Sidebar di Mobile -->
             <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <a class="navbar-brand" href="{{ route('dashboard') }}">{{ config('app.name', 'Money Tracker') }}</a>
             
-            <!-- Agar tombol Toggle muncul di kanan pada mobile, pindahkan bagian ini di luar collapse, tapi kita pertahankan di sini untuk konsistensi -->
-            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Dropdown User di Kanan -->
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     
                 <li class="nav-item dropdown me-3">
@@ -78,25 +70,20 @@
                         <i class="bi bi-globe me-1"></i> {{ strtoupper(app()->getLocale()) }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        {{-- Link ke Bahasa Indonesia --}}
                         <li><a class="dropdown-item" href="{{ route('language.switch', 'id') }}">Bahasa Indonesia</a></li>
-                        {{-- Link ke Bahasa Inggris --}}
                         <li><a class="dropdown-item" href="{{ route('language.switch', 'en') }}">English</a></li>
                     </ul>
                 </li>
-                                    <!-- Dropdown User -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle me-1"></i> {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             
-                            {{-- Link Profile (Menggantikan x-dropdown-link) --}}
                             <li><a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a></li>
                             
                             <li><hr class="dropdown-divider"></li>
                             
-                            {{-- Form Logout (Menggantikan x-dropdown-link) --}}
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -112,7 +99,6 @@
 
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar Navigasi -->
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
@@ -150,10 +136,8 @@
                 </div>
             </nav>
 
-            <!-- Main Content Section -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
                 
-                {{-- Kriteria 4: Notifikasi Error dan Sukses --}}
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success') }}

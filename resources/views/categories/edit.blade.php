@@ -14,24 +14,20 @@
     <div class="card-body">
         <form method="POST" action="{{ route('categories.update', $category) }}">
             @csrf
-            @method('PUT') {{-- PENTING: Menggunakan method PUT untuk update --}}
+            @method('PUT') 
 
-            {{-- Nama Kategori (Field Wajib) --}}
             <div class="mb-3">
                 <label for="name" class="form-label">{{ __('Nama Kategori') }}</label>
-                {{-- Gunakan old('name', $category->name) untuk mempertahankan input lama jika gagal validasi --}}
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $category->name) }}" required autofocus>
                 @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
-            {{-- Tipe Kategori (Pemasukan/Pengeluaran) --}}
             <div class="mb-3">
                 <label for="type" class="form-label">{{ __('Tipe') }}</label>
                 <select class="form-select @error('type') is-invalid @enderror" id="type" name="type" required>
                     <option value="">{{ __('Pilih Tipe') }}</option>
-                    {{-- Periksa nilai lama atau nilai saat ini dari database --}}
                     <option value="income" {{ old('type', $category->type) == 'income' ? 'selected' : '' }}>{{ __('Pemasukan') }}</option>
                     <option value="expense" {{ old('type', $category->type) == 'expense' ? 'selected' : '' }}>{{ __('Pengeluaran') }}</option>
                 </select>
@@ -40,7 +36,6 @@
                 @enderror
             </div>
 
-            {{-- Icon (Opsional) --}}
             <div class="mb-3">
                 <label for="icon" class="form-label">{{ __('Ikon (Opsional)') }}</label>
                 <input type="text" class="form-control @error('icon') is-invalid @enderror" id="icon" name="icon" value="{{ old('icon', $category->icon) }}">

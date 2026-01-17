@@ -15,6 +15,32 @@ return [
     'Pilih Tipe' => 'Pilih Tipe',
     'Unauthorized action.' => 'Aksi tidak diizinkan. Anda tidak memiliki akses ke data ini.',
     'Perbarui' => 'Perbarui',
+    
+    // Dashboard & Statistik
+    'Ringkasan Keuangan Anda' => 'Ringkasan Keuangan Anda',
+    'SALDO TOTAL SAAT INI' => 'SALDO TOTAL SAAT INI',
+    'Ringkasan semua waktu' => 'Ringkasan semua waktu',
+    'Anggaran Bulan Ini' => 'Anggaran Bulan Ini',
+    'Buat Anggaran' => 'Buat Anggaran',
+    'Sisa Anggaran:' => 'Sisa Anggaran:',
+    'Batas:' => 'Batas:',
+    'Total Pemasukan' => 'Total Pemasukan',
+    'Total Pengeluaran' => 'Total Pengeluaran',
+    'Tabungan Bersih' => 'Tabungan Bersih',
+    'Statistik Periode:' => 'Statistik Periode:', 
+    'sampai' => 'sampai',
+    'Distribusi Pengeluaran' => 'Distribusi Pengeluaran',
+    'Distribusi Pemasukan' => 'Distribusi Pemasukan',
+    'Belum ada data pengeluaran pada periode ini.' => 'Belum ada data pengeluaran pada periode ini.',
+    'Belum ada data pemasukan pada periode ini.' => 'Belum ada data pemasukan pada periode ini.',
+    'Tujuan Terdekat' => 'Tujuan Terdekat',
+    'Tidak ada tujuan yang sedang berjalan.' => 'Tidak ada tujuan yang sedang berjalan.',
+    'Dari:' => 'Dari:',
+    'Filter' => 'Filter',
+    'Bulan Ini' => 'Bulan Ini',
+    'Anggaran hanya berlaku untuk Pengeluaran.' => 'Anggaran hanya berlaku untuk Pengeluaran.',
+    'Periode Anggaran:' => 'Periode Anggaran:',
+    'Dashboard Utama' => 'Dashboard Utama',
 
     // Fitur
     'Kategori' => 'Kategori',
@@ -34,6 +60,7 @@ return [
     'Berhasil membuat Kategori baru!' => 'Berhasil membuat Kategori baru!',
     'Kategori berhasil diperbarui.' => 'Kategori berhasil diperbarui.',
     'Kategori berhasil dihapus.' => 'Kategori berhasil dihapus.',
+    'Belum ada kategori yang ditambahkan.' => 'Belum ada kategori yang ditambahkan.',
 
     // Transaksi
     'Daftar Transaksi' => 'Daftar Transaksi',
@@ -49,6 +76,13 @@ return [
     'Telah Terkumpul:' => 'Telah Terkumpul:',
     'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.' => 'Belum ada Kategori Pengeluaran. Buat dulu di menu Kategori.',
     'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.' => 'Belum ada transaksi yang dicatat. Silakan tambah transaksi baru.',
+    'Saldo (Total Semua Waktu):' => 'Saldo (Total Semua Waktu):',
+    'Total Periode:' => 'Total Periode:',
+    'Filter Transaksi' => 'Filter Transaksi',
+    'Apakah Anda yakin ingin menghapus transaksi' => 'Apakah Anda yakin ingin menghapus transaksi',
+    'sebesar' => 'sebesar',
+    'Konfirmasi Hapus' => 'Konfirmasi Hapus',
+    'Hapus Permanen' => 'Hapus Permanen',
 
     // Anggaran
     'Manajemen Anggaran' => 'Manajemen Anggaran',
@@ -63,6 +97,22 @@ return [
     'Digunakan:' => 'Digunakan:',
     'Batas:' => 'Batas:',
     'Anggaran berhasil diperbarui.' => 'Anggaran berhasil diperbarui.',
+    'Belum ada anggaran aktif bulan ini.' => 'Belum ada anggaran aktif bulan ini.',
+    'MELEBIHI BATAS' => 'MELEBIHI BATAS',
+    'Filter Anggaran' => 'Filter Anggaran',
+    'Total batas anggaran yang aktif dalam periode ini.' => 'Total batas anggaran yang aktif dalam periode ini.',
+    'Total penggunaan yang terekam dalam periode filter.' => 'Total penggunaan yang terekam dalam periode filter.',
+    'Total batas dikurangi total digunakan.' => 'Total batas dikurangi total digunakan.',
+    'Edit Anggaran' => 'Edit Anggaran',
+    'Hapus Anggaran' => 'Hapus Anggaran',
+    'Digunakan (Total Periode):' => 'Digunakan (Total Periode):',
+    'Sisa:' => 'Sisa:',
+    'Digunakan' => 'Digunakan',
+    'Apakah Anda yakin ingin menghapus anggaran untuk kategori' => 'Apakah Anda yakin ingin menghapus anggaran untuk kategori',
+    'pada periode ini?' => 'pada periode ini?',
+    'Anda belum menetapkan anggaran成份.' => 'Anda belum menetapkan anggaran成份.',
+    'Anggaran Pengeluaran' => 'Anggaran Pengeluaran',
+    'Anggaran Aktif Periode:' => 'Anggaran Aktif Periode:',
 
     // Tujuan
     'Manajemen Tujuan' => 'Manajemen Tujuan',
@@ -73,8 +123,10 @@ return [
     'Batas Waktu Target (Opsional)' => 'Batas Waktu Target (Opsional)',
     'Simpan Tujuan' => 'Simpan Tujuan',
     'Tujuan berhasil dibuat!' => 'Tujuan berhasil dibuat!',
-    'Kurang:' => 'Kurang:',
-    'Telah Terkumpul:' => 'Telah Terkumpul:',
     'Target Akhir:' => 'Target Akhir:',
     'Batas Waktu:' => 'Batas Waktu:',
+    'Tujuan berhasil dihapus.' => 'Tujuan berhasil dihapus.',
+    'Tujuan berhasil diperbarui!' => 'Tujuan berhasil diperbarui!',
+
 ];
+
